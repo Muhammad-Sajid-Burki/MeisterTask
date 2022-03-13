@@ -77,7 +77,8 @@ class _HomeScreenState extends State<HomeScreen> {
             showUnselectedLabels: false,
             items: [
               BottomNavigationBarItem(
-                  title: Container(height: 0.0), icon: Container(
+                  title: Container(height: 0.0),
+                  icon: Container(
                   height: 40,
                   width: 60,
                   decoration: BoxDecoration(
