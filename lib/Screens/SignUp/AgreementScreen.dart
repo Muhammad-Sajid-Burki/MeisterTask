@@ -139,19 +139,24 @@ class _AgreeScreenState extends State<AgreeScreen> {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 40),
-                child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child:
-                    check1 && check2 ?
-                    Text("CONTINUE", style: TextStyle(color: Colors.blue),)
-                     :
-                    InkWell(
-                        onTap: () {
+              InkWell(
+                onTap: () {
 
-                        },
-                        child: Text("CONTINUE", style: TextStyle(color: Colors.blue.shade200),))
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 40),
+                  child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child:
+                      check1 && check2 ?
+                      Text("CONTINUE", style: TextStyle(color: Colors.blue),)
+                       :
+                      InkWell(
+                          onTap: () {
+
+                          },
+                          child: Text("CONTINUE", style: TextStyle(color: Colors.blue.shade200),))
+                  ),
                 ),
               )
             ],

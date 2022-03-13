@@ -16,12 +16,13 @@ class _CreateProjectScreenState extends State<CreateProjectScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         elevation: 1,
         backgroundColor: Colors.white,
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.black,
+        iconTheme: IconThemeData(
+          color: Colors.black, //change your color here
         ),
+
         title: Text(
           "Create Project",
           style: TextStyle(color: Colors.black),

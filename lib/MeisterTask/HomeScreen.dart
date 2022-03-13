@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:meister_task/MeisterTask/MyCheckListScreen.dart';
+import 'package:meister_task/MeisterTask/MyTasksScreen.dart';
 import 'package:meister_task/MeisterTask/NotificationScreen.dart';
+import 'package:meister_task/MeisterTask/ProjectsScreen.dart';
 import 'package:meister_task/SplashScreen/model/pallete.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
@@ -23,9 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedPage = 0;
   final _pageOptions = [
     NotificationScreen(),
-    Text('Item2'),
-    Text('Item3'),
-    Text('Item3'),
+    ProjectsScreen(),
+    MyTasksScreen(),
+    MyCheckListScreen(),
   ];
 
 
@@ -108,15 +111,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.circular(20),
                     color: _selectedPage == 3 ? Colors.blue : Color(0xFF333C40),
                   ),
-                  child: Icon(Icons.tune, color: Colors.white)))
+                  child: Icon(CupertinoIcons.text_badge_checkmark, color: Colors.white)))
             ]),
 
-      floatingActionButton: new FloatingActionButton(
-        onPressed: (){
-          billingBottomSheet(context);
-        },
-        child: new Icon(Icons.add),
-      ),
     );
   }
 
@@ -338,13 +335,38 @@ class _HomeScreenState extends State<HomeScreen> {
                             title: Text("Help & Info", style: TextStyle(fontSize: 18),),
 
                           ),
-                          Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: Colors.blue
+                          SizedBox(height: 10,),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color: Color(0xff4070ff),
+                                borderRadius: BorderRadius.circular(10)
+                              ),
+                              child: Row(
+                                children: const [
+                                  Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: 10),
+                                    child: Icon(Icons.code_off_outlined, color: Colors.white, size: 20,),
+                                  ),
+                                  Flexible(
+                                    child: Text("Passionate about mobile development? So are we, come join us!",
+                                      style: TextStyle(color: Colors.white, fontSize: 12),),
+                                  ),
+                                ],
+                              )
                             ),
-                            child: ListTile(
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text("Terms of use", style: TextStyle(decoration: TextDecoration.underline, fontSize: 11),),
+                                Text("Privacy policy", style: TextStyle(decoration: TextDecoration.underline, fontSize: 11),),
+                              ],
                             ),
                           )
                         ],
